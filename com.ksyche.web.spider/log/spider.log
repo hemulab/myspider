@@ -20231,3 +20231,61 @@ java.net.SocketTimeoutException: connect timed out
 [06-26 12:45:22 426 INFO ] [Thread-1] core.dbms.DbDataSource - Shutting down connection pool...
 [06-26 12:45:22 433 INFO ] [Thread-3] core.dbms.DbDataSource - Connection pool has been shutdown.
 [06-26 12:45:22 436 INFO ] [Thread-1] core.dbms.DbDataSource - Connection pool has been shutdown.
+[06-14 23:10:22 455 INFO ] [main] dao.impl.DBProvider - rootPath:E:\opt\wf\spider\
+[06-14 23:11:10 356 INFO ] [main] dao.impl.DBProvider - rootPath:E:\opt\wf\spider\
+[06-14 23:11:19 317 INFO ] [main] dao.impl.DBProvider - creating mobileDAO(E:\opt\wf\spider\db.properties
+[06-14 23:11:19 365 INFO ] [main] dao.connpool.ConnectionHelper - creating DAOHelper configPath:E:\opt\wf\spider\db.properties
+[06-14 23:11:19 367 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool...
+[06-14 23:11:19 854 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool success connection count:5
+[06-14 23:11:19 854 INFO ] [main] tools.dao.DAOHelper - init SqlCreaterClass:com.bj58.sfft.utility.dao.sqlcreate.SqlServerSQLCreater
+[06-14 23:11:19 856 ERROR] [main] dao.impl.DBProvider - create mobile error(E:\opt\wf\spider\db.properties
+java.lang.ClassNotFoundException: com.bj58.sfft.utility.dao.sqlcreate.SqlServerSQLCreater
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:190)
+	at com.ksyche.tools.dao.DAOHelper.createDAO(DAOHelper.java:123)
+	at com.ksyche.tools.dao.DAOHelper.createIntrance(DAOHelper.java:107)
+	at com.kysche.web.spider.service.dao.impl.DBProvider.initDAO(DBProvider.java:38)
+	at com.kysche.web.spider.service.dao.impl.DBProvider.<clinit>(DBProvider.java:27)
+	at com.ksyche.web.spider.test.TestCommTool.testDBIn(TestCommTool.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+[06-14 23:15:52 421 INFO ] [main] dao.impl.DBProvider - rootPath:E:\opt\wf\spider\
+[06-14 23:16:01 617 INFO ] [main] dao.impl.DBProvider - creating mobileDAO(E:\opt\wf\spider\db.properties
+[06-14 23:16:01 625 INFO ] [main] dao.connpool.ConnectionHelper - creating DAOHelper configPath:E:\opt\wf\spider\db.properties
+[06-14 23:16:01 628 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool...
+[06-14 23:16:02 266 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool success connection count:-1
+[06-14 23:16:02 267 INFO ] [main] tools.dao.DAOHelper - init SqlCreaterClass:com.ksyche.tools.dao.statement.MysqlPSCreater
+[06-14 23:16:02 327 INFO ] [main] tools.dao.DAOHelper - create DAOHelper success!
+[06-14 23:16:02 561 INFO ] [Thread-1] core.dbms.DbDataSource - Shutting down connection pool...
+[06-14 23:16:02 566 INFO ] [Thread-3] core.dbms.DbDataSource - Shutting down connection pool...
+[06-14 23:16:02 581 INFO ] [Thread-1] core.dbms.DbDataSource - Connection pool has been shutdown.
+[06-14 23:16:02 581 INFO ] [Thread-3] core.dbms.DbDataSource - Connection pool has been shutdown.

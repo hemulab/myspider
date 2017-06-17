@@ -40,6 +40,26 @@ public class ZxxkSpider {
     List<ZxxkPaper> list = new ArrayList<ZxxkPaper>();
     for(Element element :elements ){
       ZxxkPaper zxxkPaper = new ZxxkPaper();
+      
+      Elements lis = element.select("div[class=left attribute] > ul > li");
+      for(Element e : lis){
+        Element eStrong = e.select("strong").first();
+        if(eStrong.text().contains("教材")){
+          Elements aElements = e.select("a");
+          for(Element a : aElements){
+            zxxkPaper.setType(a.attr("title"));
+          }
+        }
+        
+        if(eStrong.text().contains("分类")){
+          Elements aElements = e.select("a");
+          for(Element a : aElements){
+            zxxkPaper.setCategory(a.attr("title"));
+          }
+        }
+      }
+      
+        
       Element aName = element.select("a[name=btnFavorite]").first();
       zxxkPaper.setName(aName.attr("xkw-fav-title"));
       

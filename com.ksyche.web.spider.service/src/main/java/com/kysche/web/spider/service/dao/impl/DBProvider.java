@@ -30,7 +30,7 @@ public abstract class DBProvider {
 	private static void initDAO(String rootPath) {
 		log.info("rootPath:" + rootPath);
 
-		String carPath = rootPath + "mobile.properties";
+		String carPath = rootPath + "db.properties";
 		try {
 			File carDB = new File(carPath);
 			if (carDB.exists()) {

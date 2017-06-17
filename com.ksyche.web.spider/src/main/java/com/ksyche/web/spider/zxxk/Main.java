@@ -1,4 +1,8 @@
-package com.ksyche.web.spider.test;
+package com.ksyche.web.spider.zxxk;
+
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -9,12 +13,12 @@ import com.ksyche.tools.util.net.http.GZip;
 import com.ksyche.tools.util.net.http.HttpClient;
 import com.ksyche.tools.util.net.http.HttpRequest;
 import com.ksyche.tools.util.net.http.HttpResponse;
+import com.kysche.web.spider.service.entity.ZxxkIndexEntity;
 
-public class TestParseZsd {
+public class Main {
   private static final HttpClient client = HttpClient.getInstance(10, 100, 1024*1024*100);
 
-  public static void main(String[] args) throws Exception {
-
+  public static void main(String[] args) throws Exception{
     String baseUrl = "http://www.zxxk.com/";
     HttpRequest request = new HttpRequest(baseUrl);
     request.addHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
@@ -22,27 +26,37 @@ public class TestParseZsd {
     request.addHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0");
 
     HttpResponse res = client.request(request, 1000);
+    getListUrl(res);
+    
+  }
+
+  private static List<ZxxkIndexEntity> getListUrl(HttpResponse res) throws UnsupportedEncodingException, Exception {
+    List<ZxxkIndexEntity> list = new ArrayList<ZxxkIndexEntity>();
     String body =  new String(GZip.unzip(res.getBody()), "gbk");
     Document document = Jsoup.parse(body);
     Elements elements = document.select("div#navWrapper > div > div.submenu > ul > li");
     for(Element eil : elements){
+      ZxxkIndexEntity entity = new ZxxkIndexEntity();
       Element ea = eil.select("h3 > a").first();
-      System.out.println(ea.text());
+      entity.setSubject(ea.text());
       
       Elements divItems = eil.select("div.item");
       for(Element item : divItems){
         Element title = item.select("div.title").first();
-        System.out.print(title.text()+"aa");
-        System.out.println();
+        entity.setCategory(title.text());
         Elements ahref = item.select("a[href]");
         for(Element a : ahref){
-          System.out.println(a.attr("href")+"  "+a.text());
+          ZxxkIndexEntity clone = (ZxxkIndexEntity)entity.clone();
+          clone.setIssuse(a.text());
+          clone.setUrl(a.attr("href"));
+          list.add(clone);
         }
         
       }
       
     }
-    
+    return list;
   }
-
+  
+  
 }
