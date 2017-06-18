@@ -56,6 +56,8 @@ public class ZxxkPaper {
   
   private String loaclPath;
   
+  private String downloadUrl;
+  
   public void setType(String type){
     if(StringUtil.isBlank(type1)){
       type1 = type;
@@ -288,6 +290,14 @@ public class ZxxkPaper {
 
   public void setExamId(String examId) {
     this.examId = examId;
+  }
+
+  public String getDownloadUrl() {
+    return downloadUrl;
+  }
+
+  public void setDownloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
   }
   
   

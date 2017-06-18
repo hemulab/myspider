@@ -12,40 +12,45 @@ import org.jsoup.select.Elements;
 import com.ksyche.web.spider.zxxk.ParseDetail;
 import com.kysche.web.spider.service.entity.ZxxkPaper;
 
-public class ClearFixItemParse implements ParseDetail{
+public class ListHClearFixParse implements ParseDetail{
 
   @Override
   public List<ZxxkPaper> paserFromContent(long parentId, String content) {
-    Document document = Jsoup.parse(content);
-    Elements elements = document.select("div[class=clearfix list-item]");
     List<ZxxkPaper> list = new ArrayList<ZxxkPaper>();
+    if(StringUtils.isBlank(content)){
+      return list;
+    }
+    
+    Document document = Jsoup.parse(content);
+    Elements elements = document.select("div[class=list_h clearfix]");
     for(Element element :elements){
       ZxxkPaper paper = new ZxxkPaper();
       String id = element.attr("id");
       paper.setExamId(id);
-      Elements aSelect = element.select("div.list-mid > a");
-      if(aSelect!=null&&aSelect.size()>0){
-        paper.setName(aSelect.first().text());
+      Elements inputName = element.select("input[name=jsSoftName]");
+      if(inputName!=null&&inputName.size()>0){
+        paper.setName(inputName.first().attr("value"));
       }
       
-      Elements ilSelects = element.select("ul.attribute > li");
+      Elements ilSelects = element.select("div.attribute > ul > li");
       if(ilSelects!=null&&ilSelects.size()>0){
         for(Element e : ilSelects){
-          if(e.attr("class").contains("jiaocai")){
+          Element strong = e.select("strong").first();
+          if(strong.text().contains("教材")){
             Elements aSelects = e.select("a");
             for(Element a : aSelects){
               paper.setType(a.attr("title"));
             }
           }
           
-          if(e.attr("class").contains("feilei")){
+          if(strong.text().contains("分类")){
             Elements aSelects = e.select("a");
             for(Element a : aSelects){
               paper.setCategory(a.attr("title"));
             }
           }
           
-          if(e.attr("class").contains("zhishi")){
+          if(strong.text().contains("知识")){
             Elements aSelects = e.select("a");
             for(Element a : aSelects){
               paper.setKnowledge(a.attr("title"));
@@ -55,22 +60,25 @@ public class ClearFixItemParse implements ParseDetail{
       }
       list.add(paper);
     }
-    return list;
+    
+    return null;
   }
 
   @Override
   public boolean isRightPasre(String content) {
+    
     if(StringUtils.isBlank(content)){
       return false;
     }
     
     Document document = Jsoup.parse(content);
-    Elements elements = document.select("div[class=clearfix list-item]");
+    Elements elements = document.select("div[class=list_h clearfix]");
     if(elements==null||elements.isEmpty()){
       return false;
     }
     
     return true;
   }
+
 
 }

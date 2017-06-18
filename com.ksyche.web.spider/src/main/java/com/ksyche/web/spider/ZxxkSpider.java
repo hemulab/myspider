@@ -67,7 +67,7 @@ public class ZxxkSpider {
       if(StringUtils.isNotBlank(id)&&id.indexOf("_")>-1){
         zxxkPaper.setId(Long.parseLong(id.split("[_]")[1]));
         zxxkPaper.setDetailUrl(String.format(mobileDetailUrl, zxxkPaper.getId()));
-      }
+      } 
       Object json = JSON.toJSON(zxxkPaper);
       System.out.println(json.toString());
       list.add(zxxkPaper);
