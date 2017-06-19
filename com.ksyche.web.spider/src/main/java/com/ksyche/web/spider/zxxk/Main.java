@@ -4,6 +4,9 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ksyche.web.spider.zxxk.impl.ClearFixItemParse;
+import com.ksyche.web.spider.zxxk.impl.ListHClearFixParse;
+import com.kysche.web.spider.service.entity.ZxxkPaper;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -18,6 +21,26 @@ import com.kysche.web.spider.service.entity.ZxxkIndexEntity;
 public class Main {
   private static final HttpClient client = HttpClient.getInstance(10, 100, 1024*1024*100);
 
+  private static ParseDetail clearFixItemParse = new ClearFixItemParse();
+  private static ParseDetail listHClearFixParse = new ListHClearFixParse();
+
+  /**
+   * 获得解析数据的parse
+   * @param content
+   * @return
+   */
+  public static ParseDetail getParse(String content){
+    if(clearFixItemParse.isRightPasre(content)){
+      return clearFixItemParse;
+    }
+
+    if(listHClearFixParse.isRightPasre(content)){
+      return listHClearFixParse;
+    }
+    return null;
+  }
+
+
   public static void main(String[] args) throws Exception{
     String baseUrl = "http://www.zxxk.com/";
     HttpRequest request = new HttpRequest(baseUrl);
@@ -27,9 +50,32 @@ public class Main {
 
     HttpResponse res = client.request(request, 1000);
     List<ZxxkIndexEntity> listUrl = getListUrl(res);
-    
+    String listUlr = "";
     for(ZxxkIndexEntity entity : listUrl){
-      
+
+      for(int i=0;;i++){
+        listUlr = entity.getUrl();
+        if(i>0){
+          listUlr = listUlr+"?page="+i;
+        }
+
+        request.setUrl(listUlr);
+        res = client.request(request, 1000);
+        ParseDetail parse = getParse(res.getContent());
+        if(parse==null){
+          break;
+        }
+
+        List<ZxxkPaper> list = parse.paserFromContent(entity.getId(),res.getContent());
+        if(list==null|| list.isEmpty()){
+          continue;
+        }
+        for(ZxxkPaper paper : list) {
+          String path = DownloadParser.downLoad(paper);
+          System.out.println(path);
+        }
+
+      }
     }
     
      

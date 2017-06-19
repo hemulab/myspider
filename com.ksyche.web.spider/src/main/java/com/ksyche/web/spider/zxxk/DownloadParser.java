@@ -19,11 +19,11 @@ public class DownloadParser {
   
   private static final HttpClient client = HttpClient.getInstance(10, 100, 1024*1024*100);
 
-  static String downloadUrl = "http://m.zxxk.com/DownloadSoft/%s/null";
+  private static String downloadUrl = "http://m.zxxk.com/DownloadSoft/%s/null";
   
-  static String mobileDetailUrl = "http://m.zxxk.com/soft/%s.html";
+  private static String mobileDetailUrl = "http://m.zxxk.com/soft/%s.html";
   
-  public String downLoad(ZxxkPaper paper) throws Exception{
+  public static String downLoad(ZxxkPaper paper) throws Exception{
     String url = getDownloadUrl(paper.getExamId());
     HttpRequest request = new HttpRequest(url);
     request.addHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
@@ -44,7 +44,7 @@ public class DownloadParser {
     
     request.setUrl(data);
     res =  client.request(request, 100000);
-    String path = writer2File(res.getBody(),paper.getName());
+    String path = writer2File(res.getBody(),paper.getName()+"."+paper.getExt(),paper.getType1());
     paper.setLoaclPath(path);
     return path;
   }
@@ -57,14 +57,19 @@ public class DownloadParser {
     return String.format(downloadUrl, examId);
   }
   
-  private static String writer2File(byte[] body,String name) throws Exception{
-    File f = new File("/home/paper/"+name);
+  private static String writer2File(byte[] body,String name,String type) throws Exception{
+    File f = new File("/home/admin/paper/"+type+"/"+name);
+
+    File path = new File("/home/admin/paper/"+type);
+    if(!path.exists()){
+      path.mkdirs();
+    }
     if(!f.exists()){
       f.createNewFile();
     }
     FileOutputStream fos = new FileOutputStream(f);
     fos.write(body);
     fos.close();
-    return "/home/paper/"+name;
+    return "/home/admin/paper/"+type+"/"+name;
   }
 }

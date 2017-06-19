@@ -31,6 +31,11 @@ public class ListHClearFixParse implements ParseDetail{
       if(inputName!=null&&inputName.size()>0){
         paper.setName(inputName.first().attr("value"));
       }
+
+      Elements addCars = element.select("a[name=addcart]");
+      if(addCars!=null&&addCars.size()>0){
+        paper.setExt( addCars.attr("ext"));
+      }
       
       Elements ilSelects = element.select("div.attribute > ul > li");
       if(ilSelects!=null&&ilSelects.size()>0){
@@ -61,7 +66,7 @@ public class ListHClearFixParse implements ParseDetail{
       list.add(paper);
     }
     
-    return null;
+    return list;
   }
 
   @Override

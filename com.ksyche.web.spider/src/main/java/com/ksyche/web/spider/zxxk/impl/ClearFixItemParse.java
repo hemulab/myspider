@@ -27,6 +27,11 @@ public class ClearFixItemParse implements ParseDetail{
       if(aSelect!=null&&aSelect.size()>0){
         paper.setName(aSelect.first().text());
       }
+
+      Elements addCars = element.select("a[name=addcart]");
+      if(addCars!=null&&addCars.size()>0){
+        paper.setExt( addCars.attr("ext"));
+      }
       
       Elements ilSelects = element.select("ul.attribute > li");
       if(ilSelects!=null&&ilSelects.size()>0){
