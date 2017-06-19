@@ -20289,3 +20289,163 @@ java.lang.ClassNotFoundException: com.bj58.sfft.utility.dao.sqlcreate.SqlServerS
 [06-14 23:16:02 566 INFO ] [Thread-3] core.dbms.DbDataSource - Shutting down connection pool...
 [06-14 23:16:02 581 INFO ] [Thread-1] core.dbms.DbDataSource - Connection pool has been shutdown.
 [06-14 23:16:02 581 INFO ] [Thread-3] core.dbms.DbDataSource - Connection pool has been shutdown.
+[06-19 23:57:57 459 INFO ] [main] dao.impl.DBProvider - rootPath:D:\\mywork\\ksyweb\\conf
+[06-19 23:58:42 497 INFO ] [main] dao.impl.DBProvider - rootPath:D:\\mywork\\ksyweb\\conf
+[06-19 23:59:23 851 INFO ] [main] dao.impl.DBProvider - rootPath:D:/mywork/ksyweb/conf/
+[06-19 23:59:31 040 INFO ] [main] dao.impl.DBProvider - creating mobileDAO(D:/mywork/ksyweb/conf/db.properties
+[06-19 23:59:31 640 INFO ] [main] dao.connpool.ConnectionHelper - creating DAOHelper configPath:D:/mywork/ksyweb/conf/db.properties
+[06-19 23:59:31 662 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool...
+[06-19 23:59:33 399 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool success connection count:-1
+[06-19 23:59:33 400 INFO ] [main] tools.dao.DAOHelper - init SqlCreaterClass:com.ksyche.tools.dao.statement.MysqlPSCreater
+[06-19 23:59:33 465 INFO ] [main] tools.dao.DAOHelper - create DAOHelper success!
+[06-19 23:59:55 385 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-19 23:59:55 449 ERROR] [main] core.dbms.ClusterDataSource - SWAP datasource FROM jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1 TO jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-19 23:59:55 559 ERROR] [main] core.dbms.ClusterDataSource - SWAP readable datasource RESET datasource, ClusterDataSource: real datasources count: 2, current datasource: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:00:17 397 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:00:17 443 ERROR] [main] core.dbms.ClusterDataSource - SWAP datasource FROM jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1 TO jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:00:17 557 ERROR] [main] core.dbms.ClusterDataSource - SWAP readable datasource RESET datasource, ClusterDataSource: real datasources count: 2, current datasource: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:00:39 446 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:00:39 494 ERROR] [main] core.dbms.ClusterDataSource - SWAP datasource FROM jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1 TO jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:00:39 605 ERROR] [main] core.dbms.ClusterDataSource - SWAP readable datasource RESET datasource, ClusterDataSource: real datasources count: 2, current datasource: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:01:01 475 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:01:01 480 ERROR] [main] core.dbms.ClusterDataSource - SWAP readable datasource RESET datasource, ClusterDataSource: real datasources count: 2, current datasource: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:01:01 555 ERROR] [main] core.dbms.ClusterDataSource - SWAP datasource FROM jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1 TO jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:01:23 490 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:01:23 590 ERROR] [main] core.dbms.ClusterDataSource - SWAP readable datasource RESET datasource, ClusterDataSource: real datasources count: 2, current datasource: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:01:23 662 ERROR] [main] core.dbms.ClusterDataSource - SWAP datasource FROM jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1 TO jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:01:45 515 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:01:52 172 ERROR] [main] core.dbms.ClusterDataSource - SWAP readable datasource RESET datasource, ClusterDataSource: real datasources count: 2, current datasource: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:01:52 251 ERROR] [main] tools.dao.DAOHelper - getListByCustom error sql:examId
+java.sql.SQLException: Parameter index out of range (1 > number of parameters, which is 0).
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:975)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:920)
+	at com.mysql.jdbc.PreparedStatement.checkBounds(PreparedStatement.java:3796)
+	at com.mysql.jdbc.PreparedStatement.setInternal(PreparedStatement.java:3778)
+	at com.mysql.jdbc.PreparedStatement.setString(PreparedStatement.java:4599)
+	at com.bj58.spat.core.dbms.PreparedStatementWrapper.setString(PreparedStatementWrapper.java:144)
+	at com.ksyche.tools.dao.ClassHelper.setPara(ClassHelper.java:191)
+	at com.ksyche.tools.dao.SimpleDAOHelper.getBySQL(SimpleDAOHelper.java:354)
+	at com.kysche.web.spider.service.dao.impl.BaseServiceImpl.get(BaseServiceImpl.java:84)
+	at com.kysche.web.spider.service.dao.impl.ZxxkPaperServiceImpl.saveOrUpadate(ZxxkPaperServiceImpl.java:17)
+	at com.ksyche.web.spider.zxxk.Main.main(Main.java:103)
+[06-20 00:02:13 528 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:04:17 648 INFO ] [main] dao.impl.DBProvider - rootPath:D:/mywork/ksyweb/conf/
+[06-20 00:04:36 367 INFO ] [main] dao.impl.DBProvider - rootPath:D:/mywork/ksyweb/conf/
+[06-20 00:04:49 982 INFO ] [main] dao.impl.DBProvider - creating mobileDAO(D:/mywork/ksyweb/conf/db.properties
+[06-20 00:04:49 988 INFO ] [main] dao.connpool.ConnectionHelper - creating DAOHelper configPath:D:/mywork/ksyweb/conf/db.properties
+[06-20 00:04:49 993 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool...
+[06-20 00:04:51 114 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool success connection count:-1
+[06-20 00:04:51 116 INFO ] [main] tools.dao.DAOHelper - init SqlCreaterClass:com.ksyche.tools.dao.statement.MysqlPSCreater
+[06-20 00:04:51 131 INFO ] [main] tools.dao.DAOHelper - create DAOHelper success!
+[06-20 00:05:13 126 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:05:13 148 ERROR] [main] core.dbms.ClusterDataSource - SWAP readable datasource RESET datasource, ClusterDataSource: real datasources count: 2, current datasource: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:05:35 137 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:05:35 172 ERROR] [main] core.dbms.ClusterDataSource - SWAP readable datasource RESET datasource, ClusterDataSource: real datasources count: 2, current datasource: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:05:57 149 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:05:57 158 ERROR] [main] core.dbms.ClusterDataSource - SWAP readable datasource RESET datasource, ClusterDataSource: real datasources count: 2, current datasource: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:06:19 176 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:08:17 096 ERROR] [main] core.dbms.ClusterDataSource - SWAP readable datasource RESET datasource, ClusterDataSource: real datasources count: 2, current datasource: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:08:17 190 ERROR] [main] tools.dao.DAOHelper - getListByCustom error sql:SELECT * FROM tbl_zxxk_paper WHERE examId=? ORDER BY 6442778
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column '6442778' in 'order clause'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1054)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4237)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4169)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2617)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2778)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2834)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2156)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2313)
+	at com.bj58.spat.core.dbms.PreparedStatementWrapper.executeQuery(PreparedStatementWrapper.java:40)
+	at com.ksyche.tools.dao.SimpleDAOHelper.gets(SimpleDAOHelper.java:275)
+	at com.kysche.web.spider.service.dao.impl.BaseServiceImpl.get(BaseServiceImpl.java:67)
+	at com.kysche.web.spider.service.dao.impl.ZxxkPaperServiceImpl.saveOrUpadate(ZxxkPaperServiceImpl.java:21)
+	at com.ksyche.web.spider.zxxk.Main.main(Main.java:103)
+[06-20 00:08:46 268 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:09:31 403 INFO ] [main] dao.impl.DBProvider - rootPath:D:/mywork/ksyweb/conf/
+[06-20 00:09:34 717 INFO ] [main] dao.impl.DBProvider - creating mobileDAO(D:/mywork/ksyweb/conf/db.properties
+[06-20 00:09:34 722 INFO ] [main] dao.connpool.ConnectionHelper - creating DAOHelper configPath:D:/mywork/ksyweb/conf/db.properties
+[06-20 00:09:34 725 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool...
+[06-20 00:09:35 821 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool success connection count:-1
+[06-20 00:09:35 822 INFO ] [main] tools.dao.DAOHelper - init SqlCreaterClass:com.ksyche.tools.dao.statement.MysqlPSCreater
+[06-20 00:09:35 836 INFO ] [main] tools.dao.DAOHelper - create DAOHelper success!
+[06-20 00:09:53 646 ERROR] [main] tools.dao.DAOHelper - insert error sql:INSERT INTO tbl_zxxk_paper(`loaclPath`, `downloadUrl`, `ext`, `knowledge4`, `author`, `knowledge3`, `time`, `knowledge2`, `knowledge1`, `type1`, `name`, `type3`, `type2`, `type5`, `examId`, `type4`, `parentUrl`, `detailUrl`, `downloadCount`, `category1`, `category3`, `category2`, `category5`, `category4`, `size`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'loaclPath' in 'field list'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1054)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4237)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4169)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2617)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2778)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2834)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2156)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2441)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2366)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2350)
+	at com.bj58.spat.core.dbms.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:51)
+	at com.ksyche.tools.dao.SimpleDAOHelper.insert(SimpleDAOHelper.java:32)
+	at com.kysche.web.spider.service.dao.impl.BaseServiceImpl.add(BaseServiceImpl.java:27)
+	at com.kysche.web.spider.service.dao.impl.ZxxkPaperServiceImpl.saveOrUpadate(ZxxkPaperServiceImpl.java:24)
+	at com.ksyche.web.spider.zxxk.Main.main(Main.java:103)
+[06-20 00:09:57 828 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:11:20 830 INFO ] [main] dao.impl.DBProvider - rootPath:D:/mywork/ksyweb/conf/
+[06-20 00:12:00 619 INFO ] [main] dao.impl.DBProvider - rootPath:D:/mywork/ksyweb/conf/
+[06-20 00:12:03 797 INFO ] [main] dao.impl.DBProvider - creating mobileDAO(D:/mywork/ksyweb/conf/db.properties
+[06-20 00:12:03 802 INFO ] [main] dao.connpool.ConnectionHelper - creating DAOHelper configPath:D:/mywork/ksyweb/conf/db.properties
+[06-20 00:12:03 807 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool...
+[06-20 00:12:07 564 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool success connection count:-1
+[06-20 00:12:07 566 INFO ] [main] tools.dao.DAOHelper - init SqlCreaterClass:com.ksyche.tools.dao.statement.MysqlPSCreater
+[06-20 00:12:07 577 INFO ] [main] tools.dao.DAOHelper - create DAOHelper success!
+[06-20 00:12:16 628 ERROR] [main] tools.dao.DAOHelper - insert error sql:INSERT INTO tbl_zxxk_paper(`localPath`, `downloadUrl`, `ext`, `knowledge4`, `author`, `knowledge3`, `time`, `knowledge2`, `knowledge1`, `type1`, `name`, `type3`, `type2`, `type5`, `examId`, `type4`, `parentUrl`, `detailUrl`, `downloadCount`, `category1`, `category3`, `category2`, `category5`, `category4`, `size`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'downloadUrl' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4235)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4169)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2617)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2778)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2834)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2156)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2441)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2366)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2350)
+	at com.bj58.spat.core.dbms.PreparedStatementWrapper.executeUpdate(PreparedStatementWrapper.java:51)
+	at com.ksyche.tools.dao.SimpleDAOHelper.insert(SimpleDAOHelper.java:32)
+	at com.kysche.web.spider.service.dao.impl.BaseServiceImpl.add(BaseServiceImpl.java:27)
+	at com.kysche.web.spider.service.dao.impl.ZxxkPaperServiceImpl.saveOrUpadate(ZxxkPaperServiceImpl.java:24)
+	at com.ksyche.web.spider.zxxk.Main.main(Main.java:103)
+[06-20 00:12:29 574 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:13:05 333 INFO ] [main] dao.impl.DBProvider - rootPath:D:/mywork/ksyweb/conf/
+[06-20 00:13:08 756 INFO ] [main] dao.impl.DBProvider - creating mobileDAO(D:/mywork/ksyweb/conf/db.properties
+[06-20 00:13:08 763 INFO ] [main] dao.connpool.ConnectionHelper - creating DAOHelper configPath:D:/mywork/ksyweb/conf/db.properties
+[06-20 00:13:08 769 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool...
+[06-20 00:13:11 804 INFO ] [main] dao.connpool.ConnectionHelper - init ConnectionPool success connection count:-1
+[06-20 00:13:11 806 INFO ] [main] tools.dao.DAOHelper - init SqlCreaterClass:com.ksyche.tools.dao.statement.MysqlPSCreater
+[06-20 00:13:11 832 INFO ] [main] tools.dao.DAOHelper - create DAOHelper success!
+[06-20 00:13:28 727 ERROR] [main] zxxk.impl.ListHClearFixParse - dwonload error 
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:152)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:235)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:254)
+	at com.ksyche.tools.util.net.http.HttpConnection.readLine(HttpConnection.java:187)
+	at com.ksyche.tools.util.net.http.HttpConnection.readHeader(HttpConnection.java:117)
+	at com.ksyche.tools.util.net.http.HttpConnection.receive(HttpConnection.java:60)
+	at com.ksyche.tools.util.net.http.HttpClient.request(HttpClient.java:65)
+	at com.ksyche.web.spider.zxxk.DownloadParser.downLoad(DownloadParser.java:38)
+	at com.ksyche.web.spider.zxxk.Main.main(Main.java:102)
+[06-20 00:13:33 819 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:13:34 445 ERROR] [main] core.dbms.ClusterDataSource - SWAP readable datasource RESET datasource, ClusterDataSource: real datasources count: 2, current datasource: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:13:34 733 ERROR] [main] core.dbms.ClusterDataSource - SWAP datasource FROM jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1 TO jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1
+[06-20 00:13:55 830 ERROR] [pool-1-thread-1] core.dbms.ClusterDataSource - HaPlus:读切库  checkAndChangeThread switched to slave curDbDataSource dbs , current is :jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8 ALIVE, url: jdbc:mysql://47.93.119.105:3306/db_spider?useUnicode=true&characterEncoding=utf-8, min=1, max=50, totalSize=1, freeSize=1

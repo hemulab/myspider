@@ -2,4 +2,7 @@
 target
 *.class
 .idea/
-
+.project
+.settings
+.classpath
+.gitignore

@@ -9,6 +9,7 @@ import com.kysche.web.spider.service.dao.IMaintenanceItemJDService;
 import com.kysche.web.spider.service.dao.IWeiXiuFactoryService;
 import com.kysche.web.spider.service.dao.IYixiucheCarModelService;
 import com.kysche.web.spider.service.dao.IYixiucheMaintenaceService;
+import com.kysche.web.spider.service.dao.IZxxkPaperService;
 import com.kysche.web.spider.service.dao.impl.BaiduWeixiuEntityServiceImpl;
 import com.kysche.web.spider.service.dao.impl.CarItemJDServiceImpl;
 import com.kysche.web.spider.service.dao.impl.CarMaintenaceJDServiceImpl;
@@ -16,10 +17,13 @@ import com.kysche.web.spider.service.dao.impl.CarServiceImpl;
 import com.kysche.web.spider.service.dao.impl.ChangeMaintenaceJDServiceImpl;
 import com.kysche.web.spider.service.dao.impl.CityServiceImpl;
 import com.kysche.web.spider.service.dao.impl.IBaiduWeixiuEntityService;
+import com.kysche.web.spider.service.dao.impl.IZxxkIndexService;
+import com.kysche.web.spider.service.dao.impl.IZxxkIndexServiceImpl;
 import com.kysche.web.spider.service.dao.impl.MaintenanceItemJDServiceImpl;
 import com.kysche.web.spider.service.dao.impl.WeiXiuFactoryImpl;
 import com.kysche.web.spider.service.dao.impl.YixiucheCarModelServiceImpl;
 import com.kysche.web.spider.service.dao.impl.YixiucheMaintenaceCarServiceImpl;
+import com.kysche.web.spider.service.dao.impl.ZxxkPaperServiceImpl;
 
 
 public class ServiceFactory {
@@ -34,6 +38,9 @@ public class ServiceFactory {
 	private static IYixiucheCarModelService yixiucheCarModelService = new YixiucheCarModelServiceImpl();
 	private static ICityService cityService = new CityServiceImpl();
 	private static IBaiduWeixiuEntityService baiduService = new BaiduWeixiuEntityServiceImpl();
+	
+	private static IZxxkIndexService zxxkIndexService = new IZxxkIndexServiceImpl();
+	private static IZxxkPaperService zxxKPaperService = new ZxxkPaperServiceImpl();
 	@SuppressWarnings("unchecked")
 	public static <T> T createService(Class<T> cls) {
 		if(cls ==ICarService.class){
@@ -65,6 +72,14 @@ public class ServiceFactory {
 		}
 		if(cls==IBaiduWeixiuEntityService.class){
 			return (T)baiduService;
+		}
+		
+		if(cls==IZxxkIndexService.class){
+		  return (T)zxxkIndexService;
+		}
+		
+		if(cls==IZxxkPaperService.class){
+		  return (T)zxxKPaperService;
 		}
 		return null;
 	}

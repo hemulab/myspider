@@ -54,7 +54,7 @@ public class ZxxkPaper {
   
   private String downloadCount;
   
-  private String loaclPath;
+  private String localPath;
   
   private String downloadUrl;
 
@@ -270,12 +270,13 @@ public class ZxxkPaper {
     this.downloadCount = downloadCount;
   }
 
-  public String getLoaclPath() {
-    return loaclPath;
+
+  public String getLocalPath() {
+    return localPath;
   }
 
-  public void setLoaclPath(String loaclPath) {
-    this.loaclPath = loaclPath;
+  public void setLocalPath(String localPath) {
+    this.localPath = localPath;
   }
 
   public String getParentUrl() {
