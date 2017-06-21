@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.alibaba.fastjson.JSON;
 import com.bj58.wf.util.StringUtil;
 import com.ksyche.web.spider.zxxk.impl.ClearFixItemParse;
 import com.ksyche.web.spider.zxxk.impl.ListHClearFixParse;
@@ -14,6 +15,7 @@ import com.kysche.web.spider.service.dao.IZxxkPaperService;
 import com.kysche.web.spider.service.dao.impl.IZxxkIndexService;
 import com.kysche.web.spider.service.entity.ZxxkPaper;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jsoup.Jsoup;
@@ -37,7 +39,9 @@ public class Main {
   private static IZxxkPaperService zxxkPaperService = ServiceFactory.createService(IZxxkPaperService.class);
   private static Log log = LogFactory.getLog(Main.class);
 
-  
+  private static long[] indexIds = {18,23,79,90,148,158,211,224,275,283,334,340,380,384,436,439,487,492};
+
+  private static int maxCount = 50;
   /**
    * 获得解析数据的parse
    * @param content
@@ -64,21 +68,35 @@ public class Main {
 
     HttpResponse res = client.request(request, 60000);
     List<ZxxkIndexEntity> listUrl = getListUrl(res);
-//    for(ZxxkIndexEntity index : listUrl){
-//      Map<String, Object> condition = new HashMap<String,Object>();
-//      condition.put("url", index.getUrl());
-//      List<ZxxkIndexEntity> list = zxxkIndexService.get(condition , "id desc");
-//      if(list==null||list.isEmpty()){
-//        long id = zxxkIndexService.add(index);
-//        index.setId(id);
-//      }else{
-//        index = list.get(0);
-//      }
-//    }
+    for(ZxxkIndexEntity index : listUrl){
+      Map<String, Object> condition = new HashMap<String,Object>();
+      condition.put("url", index.getUrl());
+      List<ZxxkIndexEntity> list = zxxkIndexService.get(condition , "id desc");
+      if(list==null||list.isEmpty()){
+        long id = zxxkIndexService.add(index);
+        index.setId(id);
+      }else{
+        index.setId(list.get(0).getId());
+      }
+    }
     String listUlr = "";
     for(ZxxkIndexEntity entity : listUrl){
+      boolean isSpider = false;
+      for(int i=0;i<indexIds.length-1;i=i+2){
+        if(indexIds[i]<=entity.getId()&&entity.getId()<=indexIds[i+1]){
+          isSpider = true;
+        }
+      }
+      if(!isSpider){
+        continue;
+
+      }
 
       for(int i=0;;i++){
+        int count = 0;
+        if(count>maxCount){
+          break;
+        }
         listUlr = entity.getUrl();
         if(i>0){
           listUlr = listUlr+"?page="+i;
@@ -100,7 +118,25 @@ public class Main {
         }
         int nullCount = 0;
         for(ZxxkPaper paper : list) {
+          //数据库查询一下 看是否已经下载
 
+          ZxxkPaper zxxkPaper = getZxxkPaper(paper.getExamId());
+          if(zxxkPaper!=null&&StringUtils.isNotBlank(zxxkPaper.getLocalPath())){
+            if(zxxkPaper.getParentId()==0){
+                zxxkPaper.setParentId(entity.getId());
+                zxxkPaper.setDetailUrl(listUlr);
+                zxxkPaper.setParentUrl(entity.getUrl());
+                zxxkPaperService.saveOrUpadate(zxxkPaper);
+            }
+            continue;
+          }
+          if(paper.getKnowledge1()==null){
+            log.info("know ledge null " +JSON.toJSONString(paper));
+            continue;
+          }
+          paper.setParentUrl(entity.getUrl());
+          paper.setDetailUrl(listUlr);
+          paper.setParentId(entity.getId());
           String path = DownloadParser.downLoad(paper);
           if(StringUtil.isBlank(path)){
            if(nullCount++ > 10){
@@ -109,6 +145,7 @@ public class Main {
           }else{
             nullCount = 0;
           }
+          count ++;
           zxxkPaperService.saveOrUpadate(paper);
 
         }
@@ -119,6 +156,8 @@ public class Main {
      
     
   }
+
+
 
   private static List<ZxxkIndexEntity> getListUrl(HttpResponse res) throws UnsupportedEncodingException, Exception {
     List<ZxxkIndexEntity> list = new ArrayList<ZxxkIndexEntity>();
@@ -147,6 +186,23 @@ public class Main {
     }
     return list;
   }
-  
+
+  private static ZxxkPaper getZxxkPaper(String examId){
+    if(StringUtil.isBlank(examId)){
+      return null;
+    }
+    Map<String,Object> condition = new HashMap<>();
+    condition.put("examId",examId);
+    try {
+      List<ZxxkPaper> zxxkPapers = zxxkPaperService.get(condition, "id desc");
+      if(zxxkPapers!=null&&zxxkPapers.size()>0){
+        return zxxkPapers.get(0);
+      }
+    } catch (Exception e) {
+      log.error("get paper error " ,e);
+    }
+    return null;
+  }
+
   
 }

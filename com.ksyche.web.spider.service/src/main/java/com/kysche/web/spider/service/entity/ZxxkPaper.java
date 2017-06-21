@@ -59,6 +59,8 @@ public class ZxxkPaper {
   private String downloadUrl;
 
   private String ext ;
+
+  private long parentId;
   
   public void setType(String type){
     if(StringUtil.isBlank(type1)){
@@ -309,5 +311,13 @@ public class ZxxkPaper {
 
   public void setExt(String ext){
     this.ext = ext;
+  }
+
+  public long getParentId() {
+    return parentId;
+  }
+
+  public void setParentId(long parentId) {
+    this.parentId = parentId;
   }
 }
