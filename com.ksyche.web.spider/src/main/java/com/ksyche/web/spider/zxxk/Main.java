@@ -39,7 +39,7 @@ public class Main {
   private static IZxxkPaperService zxxkPaperService = ServiceFactory.createService(IZxxkPaperService.class);
   private static Log log = LogFactory.getLog(Main.class);
 
-  private static long[] indexIds = {18,23,79,90,148,158,211,224,275,283,334,340,380,384,436,439,487,492};
+  private static long[] indexIds = {79,90,148,158,211,224,275,283,334,340,380,384,436,439,487,492};
 
   private static int maxCount = 50;
   /**
@@ -92,8 +92,8 @@ public class Main {
 
       }
 
+      int count = 0;
       for(int i=0;;i++){
-        int count = 0;
         if(count>maxCount){
           break;
         }
@@ -132,6 +132,9 @@ public class Main {
           }
           if(paper.getKnowledge1()==null){
             log.info("know ledge null " +JSON.toJSONString(paper));
+            continue;
+          }
+          if("flv".equals(paper.getExt())||"视频".equals(paper.getCategory1())){
             continue;
           }
           paper.setParentUrl(entity.getUrl());
